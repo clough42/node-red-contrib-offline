@@ -1,0 +1,24 @@
+{
+  "name": "node-red-contrib-offline",
+  "version": "0.1.0",
+  "description": "A node that reports when data has not arrived in a configurable period of time",
+  "author": "Clough42 (https://github.com/clough42)",
+  "dependencies": {},
+  "keywords": [
+    "node-red",
+    "offline",
+    "dead",
+    "missing"
+  ],
+  "homepage": "https://github.com/clough42/node-red-contrib-offline",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/clough42/node-red-contrib-offline"
+  },
+  "node-red": {
+    "nodes": {
+      "offline": "offline/offline.js"
+    }
+  }
+}

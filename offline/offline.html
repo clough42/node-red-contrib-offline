@@ -1,0 +1,61 @@
+<script type="text/javascript">
+    RED.nodes.registerType('offline',{
+        category: 'function',
+        color: '#e87d81',
+        defaults: {
+            name: {value:""},
+            time: {value:"3600"},
+            defaultTopic: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "alert.png",
+        label: function() {
+            return this.name||"offline";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="offline">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-time"><i class="icon-pause"></i>Time</label>
+        <input type="text" id="node-input-time" placeholder="Allowable soft excursion time, in seconds">
+    </div>
+    <div class="form-row">
+        <label for="node-input-defaultTopic"><i class="icon-tasks"></i>Default Topic</label>
+        <input type="text" id="node-input-defaultTopic" placeholder="Topic for offline message">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="offline">
+    <p>Reports when data has not arrived in a configurable time</p>
+
+    <p>Use this node to monitor a message stream and report if data
+    does not arrive in a configurable time.  This provides a way good way
+    to tell if a device has gone off-line.</p>
+
+    <p>The timer starts on startup and is reset every time a message
+    arrives.  If the time expires with no data arriving, the most recently received
+    message is sent to the output.  If no message was ever received, a new message
+    is sent with the default topic and a payload of "false".<p>
+
+    <p>Configuration:</p>
+
+    <ul>
+
+    <li><code>Name</code> - The name to display for this node.  Leave blank to use the default.</li>
+
+    <li><code>Time</code> - The allowable gap between messages, in seconds.
+    If no data arrives before the timer expires, the most recent message (or
+    a default message) is sent to the output.</li>
+
+    <li><code>Default Topic</code> - The topic that will be used to generate a
+    message on timeout if no packet was ever received.</li>
+
+    </ul>
+
+</script>
