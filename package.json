@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-offline",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A node that reports when data has not arrived in a configurable period of time",
   "author": "Clough42 (https://github.com/clough42)",
   "dependencies": {},
