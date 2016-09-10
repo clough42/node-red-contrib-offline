@@ -5,10 +5,7 @@
   "author": "Clough42 (https://github.com/clough42)",
   "dependencies": {},
   "keywords": [
-    "node-red",
-    "offline",
-    "dead",
-    "missing"
+    "node-red"
   ],
   "homepage": "https://github.com/clough42/node-red-contrib-offline",
   "license": "MIT",
